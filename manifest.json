@@ -1,0 +1,35 @@
+{
+  "name": "8 Poll Aim",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Simple Infinite Aim for 8 Pool Game",
+  "homepage_url": "http://rodrigobrito.net",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Active 8 Pool Aim",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "contentSettings","tabs", "http://*/*", "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://apps.facebook.com/livepool/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ],
+      "js": [
+        "src/inject/inject.js",
+        "js/jquery/jquery.min.js",
+        "js/jsPlumb-2.2.8.js"
+      ]
+    }
+  ]
+}
